@@ -1,0 +1,8 @@
+#pizzas{
+    display: none;
+}
+
+.pizza-item{
+    background-color: aliceblue;
+    max-width: 10rem;
+}
