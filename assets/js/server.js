@@ -24,6 +24,7 @@ app.use('/assets', express.static(path.join(__dirname, 'assets')));
 app.use('/styles', express.static(path.join(__dirname, 'styles')));
 app.use('/utils', express.static(path.join(__dirname, 'utils')));
 
+// Rota para buscar pizzas
 app.get('/api/pizzas', (req, res) => {
   client.query("SELECT * from pizzas", (err, result) => {
     if (err) {
@@ -34,6 +35,39 @@ app.get('/api/pizzas', (req, res) => {
     }
   });
 });
+
+// Rota para inserir uma nova pizza
+app.post('/api/pizzas', (req, res) =>{
+  const {sabor, descricao, preco} = req.body;
+  const query = "INSERT INTO pizzas (sabor, descricao, preco) VALUES ($1, $2, $3) RETURNING *"
+  const values = [sabor, descricao, preco]
+
+  client.query(query, values, (err, result) =>{
+    if(err){
+      console.error("Erro ao inserir a pizza!", err.stack);
+      res.status(500).send("Erro ao inserir a pizza no banco de dados!")
+    }else{
+      res.status(201).json(result.rows[0])
+    }
+  })
+})
+
+
+// Rota para inserir um novo usuário 
+app.post('/api/users', (req, res) =>{
+  const {fullname, email, password} = req.body;
+  const query = 'INSERT INTO users(fullname, descricao, preco) VALUES($1, $2, $3) RETURNING *'
+  const values = [fullname, email, password]
+
+  client.query(query, values, (err, result) =>{
+    if(err){
+      console.error("Erro ao criar novo usuário!", err.stack)
+      res.status(500).send("Erro ao inserir novo usuário no banco de dados!")
+    }else{
+      res.status(201).json(result.rows[0])
+    }
+  })
+})
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'views', 'index.html'));

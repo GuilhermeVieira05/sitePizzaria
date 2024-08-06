@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --login-color: #d33838;
+}
+
+#forms{
+    display: flex;
+    background-color: var(--login-color);
+    max-width: 20rem;
+    min-height: 20rem;
+    padding: 2rem;
+    padding-top: 0;
+    margin: 5rem auto;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 10px 5px 6px 3px rgba(0, 0, 0, 0.747);
+}
+
+.forms_title{
+    margin-bottom: 3rem;
+}
+
+.toLoginButton, .toSignupButton{
+    border: none;
+    background-color: var(--login-color);
+    color: rgb(2, 2, 172);
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.signup_forms, .login_forms{
+    display: flex;
+    max-width: 15rem;
+    flex-direction: column;
+    margin: 2rem auto;
+}
+
+input{
+    border-radius: 10px;
+    background-color: darkgray;
+}
+
+.hidden{
+    display: none;
+}
