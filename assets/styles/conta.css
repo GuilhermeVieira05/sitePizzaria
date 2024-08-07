@@ -43,8 +43,21 @@
 input{
     border-radius: 10px;
     background-color: darkgray;
+    padding-left: 7px;
 }
 
 .hidden{
+    animation: slidein 2s cubic-bezier(0.075, 0.82, 0.165, 1);
     display: none;
+}
+
+@keyframes slidein {
+    0%{
+        transform: translate(100vh);
+    }
+
+    100%{
+        transform: translate(0);
+       
+    }
 }

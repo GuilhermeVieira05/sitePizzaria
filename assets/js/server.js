@@ -52,6 +52,17 @@ app.post('/api/pizzas', (req, res) =>{
   })
 })
 
+// Rota para buscar usuários
+app.get('/api/users', (req, res) => {
+  client.query("SELECT * from users", (err, result) => {
+    if (err) {
+      console.error("Erro na consulta", err.stack);
+      res.status(500).send('Erro na consulta ao banco de dados.');
+    } else {
+      res.json(result.rows);
+    }
+  });
+});
 
 // Rota para inserir um novo usuário 
 app.post('/api/users', (req, res) =>{
