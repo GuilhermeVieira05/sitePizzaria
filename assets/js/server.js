@@ -8,6 +8,7 @@ const app = express();
 const port = 3000;
 
 app.use(cors())
+app.use(express.json())
 
 const client = new Client({
   host: "localhost",
@@ -67,7 +68,8 @@ app.get('/api/users', (req, res) => {
 // Rota para inserir um novo usuário 
 app.post('/api/users', (req, res) =>{
   const {fullname, email, password} = req.body;
-  const query = 'INSERT INTO users(fullname, descricao, preco) VALUES($1, $2, $3) RETURNING *'
+  console.log(req.body)
+  const query = 'INSERT INTO users (fullname, email, password) VALUES($1, $2, $3) RETURNING *'
   const values = [fullname, email, password]
 
   client.query(query, values, (err, result) =>{

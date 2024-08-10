@@ -1,4 +1,4 @@
-let apiUsers = "http://localhost:3000/api/users"
+const apiUsers = "http://localhost:3000/api/users"
 
 export default class User{
     constructor(fullname, email, password, confirmPassword){

@@ -25,7 +25,7 @@ const inputs = document.querySelectorAll("input")
 signupButton.addEventListener('click', (ev)=>{
      ev.preventDefault()
 
-     const newUser = new User(fullname, signupEmail, signupPassword, confirmPassword)
+     const newUser = new User(fullname.value, signupEmail.value, signupPassword.value, confirmPassword.value)
      newUser.save()
      console.log(newUser)
 
