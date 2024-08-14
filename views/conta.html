@@ -9,7 +9,7 @@
     <script src="https://kit.fontawesome.com/e6ba16fcdf.js" crossorigin="anonymous"></script>
     <script src="../assets/js/server.js" defer></script>
     <script src="../assets/js/conta.js" type="module" defer ></script>
-    <link rel="stylesheet" href="/assets/styles/conta.css">
+    <link rel="stylesheet" href="../assets/styles/conta.css">
 </head>
 <body>
     <header>
@@ -39,7 +39,7 @@
     </header>
     <main>
         <section id="forms">
-            <div class="signup_forms">
+            <form class="signup_forms" method="post">
                 <h1 class="forms_title">Sign Up</h1>
                 <label for="fullname">Nome Completo: </label>
                 <input type="text" name="fullname" id="fullname">
@@ -51,7 +51,7 @@
                 <input type="password" name="confirmPassword" id="confirmPassword">
                 <button class="toLoginButton">Já possui uma conta?</button>
                 <button class="signup_button">Sign Up</button>
-            </div>
+            </form>
             <div class="login_forms hidden">
                 <h1 class="forms_title">Login</h1>
                 <label for="loginEmail">Email: </label>

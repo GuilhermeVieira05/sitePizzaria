@@ -51,13 +51,3 @@ input{
     display: none;
 }
 
-@keyframes slidein {
-    0%{
-        transform: translate(100vh);
-    }
-
-    100%{
-        transform: translate(0);
-       
-    }
-}

@@ -28,7 +28,10 @@ signupButton.addEventListener('click', (ev)=>{
      const newUser = new User(fullname.value, signupEmail.value, signupPassword.value, confirmPassword.value)
      newUser.save()
      console.log(newUser)
+     
 
+
+     signupForms.reset()
 
 })
 
@@ -55,3 +58,15 @@ toSignupButton.addEventListener('click', (ev)=>{
     })
     
 })
+
+
+async function postUser(user){
+    try{
+        const response = await fetch(apiUsers, {
+            method = "POST",
+            headers = {
+                "Content-Type"
+            }
+        })
+    }
+}
