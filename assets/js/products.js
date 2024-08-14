@@ -11,9 +11,19 @@ async function fetchPizzas() {
       
       pizzas.forEach(pizza => {
         const pizzaDiv = document.createElement('div');
+        pizzaDiv.classList.add("col-lg-4", "col-md-6", "col-sm-12", "col-12")
         let pizzaPrice = pizza.preco.replace(".", ",")
+        pizzaDiv.innerHTML = `<div class="card" style="width=18rem;">
+                                <div class="card-body">
+                                  <div class=div__title>
+                                  <h5 class="card-title">${pizza.sabor}</h5>
+                                  </div>
+                                  <p class="card-text">${pizza.descricao || "Sem descrição"}
+                                  <p class="card-text"> Preço: R$ ${pizzaPrice}
+                                  </div>
+                                </div>`
+
         pizzaDiv.classList.add(`pizza-${pizza.sabor}`, 'pizza-item');
-        pizzaDiv.innerHTML = `<h2 class="pizza-title">${pizza.sabor}</h2><p class="pizza-description">${pizza.descricao}</p><p class="pizza-price">Preço: R$ ${pizzaPrice}</p>`;
         pizzasDiv.appendChild(pizzaDiv);
       });
     } catch (error) {

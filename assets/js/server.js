@@ -10,12 +10,18 @@ const port = 3000;
 app.use(cors())
 app.use(express.json())
 
+const dbHost = process.env.DB_HOST;
+const dbUser = process.env.DB_USER;
+const dbPassword = process.env.DB_PASS
+const dbName = process.env.DB_NAME
+const dbPort = process.env.DB_PORT
+
 const client = new Client({
-  host: "localhost",
-  user: "postgres",
-  password: "V131r4813174%",
-  database: "pizzaria",
-  port: 5432
+  host: dbHost,
+  user: dbUser,
+  password: dbPassword,
+  database: dbName,
+  port: dbPort
 });
 
 client.connect().then(() => console.log("Conectado ao PostgreSQL")).catch(err => console.error("Erro ao conectar ao PostgreSQL", err.stack));
