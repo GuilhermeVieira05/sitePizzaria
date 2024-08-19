@@ -32,6 +32,7 @@ signupButton.addEventListener('click', (ev)=>{
 
 
      signupForms.reset()
+     
 
 })
 
@@ -59,14 +60,8 @@ toSignupButton.addEventListener('click', (ev)=>{
     
 })
 
+loginButton.addEventListener('click', (ev) =>{
+    ev.preventDefault()
 
-async function postUser(user){
-    try{
-        const response = await fetch(apiUsers, {
-            method = "POST",
-            headers = {
-                "Content-Type"
-            }
-        })
-    }
-}
+    
+})

@@ -65,6 +65,11 @@ export default class User{
 
             const result = await response.json()
             console.log("Usuário criado com sucesso!", result)
+
+
+            // TODO: window.location.href = "./index.html"
+
+
         }catch (error){
             console.error("Erro: ", error)
         }

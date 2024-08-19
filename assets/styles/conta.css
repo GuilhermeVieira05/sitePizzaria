@@ -8,46 +8,80 @@
     --login-color: #d33838;
 }
 
-#forms{
+.main {
     display: flex;
-    background-color: var(--login-color);
-    max-width: 20rem;
-    min-height: 20rem;
-    padding: 2rem;
-    padding-top: 0;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+#forms {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
     margin: 5rem auto;
+}
+
+.forms_title {
     text-align: center;
-    border-radius: 10px;
-    box-shadow: 10px 5px 6px 3px rgba(0, 0, 0, 0.747);
+    margin-bottom: 20px;
+    color: #007bff;
+    font-size: 24px;
+    font-weight: bold;
 }
 
-.forms_title{
-    margin-bottom: 3rem;
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
 }
 
-.toLoginButton, .toSignupButton{
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
     border: none;
-    background-color: var(--login-color);
-    color: rgb(2, 2, 172);
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
 }
 
-.signup_forms, .login_forms{
-    display: flex;
-    max-width: 15rem;
-    flex-direction: column;
-    margin: 2rem auto;
+.login_button:hover, .signup_button:hover {
+    background-color: #0056b3;
 }
 
-input{
-    border-radius: 10px;
-    background-color: darkgray;
-    padding-left: 7px;
-}
-
-.hidden{
-    animation: slidein 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+.hidden {
     display: none;
 }
 
+.toLoginButton, .toSignupButton {
+    background: none;
+    border: none;
+    color: #007bff;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 1px;
+    display: block;
+    text-align: center;
+}
+
+.toLoginButton:hover, .toSignupButton:hover {
+    color: #0056b3;
+}
